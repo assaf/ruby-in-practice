@@ -1,0 +1,26 @@
+This example was tested against SOAP4R 1.5.8, to install:
+
+  gem install soap4r
+
+If you don't have Rails installed, you'll need to install ActiveRecord:
+
+  gem install activerecord
+
+The default configuration uses an SQLite3 database, you may have to install the
+gem separately:
+
+  gem install sqlite3-ruby 
+
+You can use a different database server by changing the database.yaml
+configuration file.
+
+Start the server first:
+
+  ruby server.rb
+
+Next, run the test client:
+
+  ruby client.rb
+
+The client will send a request to the server to generate a new task and return
+the new task's identifier.  To stop the server just click Ctrl-C.

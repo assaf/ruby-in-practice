@@ -1,0 +1,3 @@
+To obtain historical results for the Google (GOOG) stock:
+
+  ruby historical.rb GOOG

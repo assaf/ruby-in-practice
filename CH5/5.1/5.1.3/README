@@ -1,0 +1,16 @@
+This example requires Mongrel and RubyZip, if not already installed:
+
+  gem install mongrel
+  gem install rubyzip
+
+To start the server, point it to a directory holding the relevant log files:
+
+  ruby log_service.rb /var/logs
+
+To download the latest collection of logs, open your browser to
+
+  http://localhost:3000/logs/last
+
+The server collects log files with the names like errors-2008-06-25.log, where
+2008-06-25 is today's date.  If it can't find suitable files you will download
+an empty Zip.

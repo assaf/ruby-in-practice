@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions name='taskService'
+  targetNamespace='http://example.com/taskManager'
+  xmlns='http://schemas.xmlsoap.org/wsdl/'
+  xmlns:tns='http://example.com/taskManager'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/'>
+ <types>
+  <xsd:schema elementFormDefault='unqualified'
+        targetNamespace='http://example.com/taskManager'>
+   <xsd:element name='createTask'>
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name='title' type='xsd:string'/>
+      <xsd:element name='priority' type='xsd:int' minOccurs='0'/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name='createTaskResponse'>
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name='id' type='xsd:string'/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+  </xsd:schema>
+ </types>
+
+ <message name='createTask'>
+  <part name='task' element='tns:createTask'/>
+ </message>
+ <message name='createTaskResponse'>
+  <part name='task' element='tns:createTaskResponse'/>
+ </message>
+
+ <portType name='taskManagement'>
+  <operation name='createTask'>
+   <input message='tns:createTask'/>
+   <output message='tns:createTaskResponse'/>
+  </operation>
+ </portType>
+
+ <binding name='taskManagementDocLit' type='tns:taskManagement'>
+  <soap:binding transport='http://schemas.xmlsoap.org/soap/http'
+         style='document' />
+  <operation name='createTask'>
+   <soap:operation style='document' />
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+
+ <service name='taskService'>
+  <port name='docLit' binding='tns:taskManagementDocLit'>
+   <soap:address location='http://localhost:8080/'/>
+  </port>
+ </service>
+</definitions>

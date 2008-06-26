@@ -1,0 +1,15 @@
+This example requires Mongrel and XmlSimple, if not already installed:
+
+  gem install mongrel
+  gem install xml-simple
+
+To run the example, both client and server:
+
+  ruby example.rb
+
+You can also specify the port number like this:
+
+  ruby example.rb 3005
+
+This example will create a new order resource.  The server shows the resource
+contents (XML) on the console, the client shows the URL of the new resource.
