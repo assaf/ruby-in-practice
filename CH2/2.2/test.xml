@@ -1,0 +1,24 @@
+<payroll-report>
+  <department name="Graphics">
+    <employee name="Janice Partridge">
+      <week id="1">40</week>
+      <week id="2">38</week>
+      <week id="3">30</week>
+      <week id="4">40</week>
+    </employee>
+    <employee name="James Jones">
+      <week id="1">33</week>
+      <week id="2">23</week>
+      <week id="3">30</week>
+      <week id="4">25</week>
+    </employee>
+  </department>
+  <department name="IT">
+    <employee name="Andrea Lantz">
+      <week id="1">40</week>
+      <week id="2">41</week>
+      <week id="3">45</week>
+      <week id="4">39</week>
+    </employee>
+  </department>
+</payroll-report>

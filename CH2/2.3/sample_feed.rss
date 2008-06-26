@@ -1,0 +1,13 @@
+<channel>
+	<title>Sample Feed</title>
+  <item>
+    <title>First item</title>
+    <description>First item in this feed.</description>
+    <link>http://localhost/items/1</link>
+  </item>
+  <item>
+    <title>Second item</title>
+    <description>Second item in this feed.</description>
+    <link>http://localhost/items/2</link>
+  </item>
+</channel>

@@ -1,0 +1,10 @@
+This example requires RSpec and SimpleRss, if not already installed:
+
+  gem install rspec
+  gem install simple-rss
+
+To test the specification use the spec command:
+
+  spec intranet_reader_spec.rb
+
+A successful run should report 6 examples and 0 failures.

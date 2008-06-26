@@ -1,0 +1,9 @@
+This example requires the XmlSimple gem, if not already installed:
+
+  gem install xml-simple
+
+To run the tests:
+
+  ruby reporter_test.rb
+
+A successful run will report 3 tests, 8 assertions and 0 errors.

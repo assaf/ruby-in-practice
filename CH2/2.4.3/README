@@ -1,0 +1,15 @@
+This example requires Mocha, if not already installed:
+
+  sudo gem install mocha
+
+The first example tests using stubs, to run the tests:
+
+  ruby test_using_stubs.rb
+
+When successfully run it should report 1 test, 1 assertion and 0 failures.
+
+The second example tests expectations using mocks, to run the tests:
+
+  ruby test_using_mocha.rb
+
+When successfully run it should report 1 test, 6 assertion and 0 failures.

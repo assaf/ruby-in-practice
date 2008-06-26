@@ -1,0 +1,7 @@
+To run the process checker test (Linux, OS X, BSD, etc):
+
+  ruby ps_checker_test.rb 
+
+To run the process checker test with fixture (all platforms):
+
+  ruby ps_checker_with_fixture.rb
