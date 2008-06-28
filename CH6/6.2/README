@@ -1,0 +1,14 @@
+This directory provides source code for the listings in chapter 6 section 2.
+
+These listings are simple examples for how you could use instant messaging in
+your own application.  They are written against a fictitious IM server using
+fictitious IM accounts, so you will have to change the listing to the actual IM
+accounts/servers you are using.
+
+Listings 6.6/7 requires Net::Toc, if not already installed:
+
+  gem install net-toc
+
+Listing 6.8/9 requires XMPP4R-Simple, if not already installed:
+
+  gem install xmpp4r-simple

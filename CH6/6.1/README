@@ -1,0 +1,14 @@
+This directory provides source code for the listings in chapter 6 section 1.
+
+These listings are simple examples for how you could process email messages in
+your own application.  They are written against a fictitious email server,
+using fictitious email accounts, so you will have to change the listing to
+the actual email accounts/servers you are using.
+
+Listing 6.2 requires MailFactory, if not already installed:
+
+  gem install mailfactory
+
+Listing 6.5 requires TMail, if not already installed:
+
+  gem install tmail
