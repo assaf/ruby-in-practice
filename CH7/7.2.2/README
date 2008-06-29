@@ -1,0 +1,19 @@
+This example illustrates how to process messages from WebSphere MQ and create
+new records in the database.  You will need RubyWMQ and ActiveRecord, if not
+already installed:
+
+  gem install activerecord
+  gem install rubywmq
+
+The WebSphere MQ configuration is located in the file config/wmq.yml.
+
+To run against the database you will need to create a table called leads with
+the columns first_name, last_name, company, email and lead_source, and edit
+the configuration file config/database.yml.
+
+To run against SalesForce, you need the Active Sales Force gem installed:
+
+  gem install activesalesforce
+
+Copy the configuration in config/salesforce.yml over to config/database.yml and
+set your SalesForce user name, password and account URL.

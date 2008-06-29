@@ -1,0 +1,12 @@
+development:
+  q_mgr_name: DEV.QM
+
+test:
+  q_mgr_name: TEST.QM
+
+production:
+  q_mgr_name:  VENUS.QM
+  connection_name: venus.example.com(1414)
+  channel_name:    SYSTEM.DEF.SVRCONN
+  transport_type:  WMQ::MQXPT_TCP                                    
+

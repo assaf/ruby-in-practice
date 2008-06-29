@@ -1,0 +1,3 @@
+This example illustrates how to send messages from a Rails application using
+reliable-msg.  It does not provide a full Rails application that you can run,
+only files that would make up part of such application.

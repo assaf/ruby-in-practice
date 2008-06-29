@@ -1,0 +1,18 @@
+This example uses the Stomp library.  If not already installed:
+
+  gem install stomp
+
+It can use any messaging server that supports Stomp, for example, ActiveMQ.  If
+you do not have an existing messaging server, you can use stompserver to try
+this example out:
+
+  gem install stompserver
+  stompserver
+
+And from a different console:
+
+  ruby example.rb
+
+This example loads error_reporter.rb and uses it to queue an error message.  It
+then loads error_consumer.rb, which consumes and prints all messages from the
+queue /queue/errors.  To stop the consumer, click Ctrl-C.
