@@ -4,7 +4,7 @@ require 'soap/driver'
 require 'taskService'
 
 puts 'Creating server ...'
-ActiveRecord::Base.establish_connection(YAML.load(File.read('database.yaml')))
+ActiveRecord::Base.establish_connection(YAML.load(File.read('database.yml')))
 db = ActiveRecord::Base.connection
 unless db.table_exists?('task')
   db.create_table 'tasks' do |table|
