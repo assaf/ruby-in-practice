@@ -1,0 +1,39 @@
+require 'rake/testtask'
+require 'rake/rdoctask'
+require 'rake/gempackagetask'
+
+desc 'Default: run unit tests.'
+task :default => :test
+
+desc 'Test the validates_url plugin.'
+Rake::TestTask.new(:test) do |t|
+  t.libs << 'lib'
+  t.pattern = 'test/**/*_test.rb'
+  t.verbose = true
+end
+
+desc 'Generate documentation for the validates_url plugin.'
+Rake::RDocTask.new(:rdoc) do |rdoc|
+  rdoc.rdoc_dir = 'rdoc'
+  rdoc.title    = 'ValidatesUrl'
+  rdoc.options << '--line-numbers' << '--inline-source'
+  rdoc.rdoc_files.include('README')
+  rdoc.rdoc_files.include('lib/**/*.rb')
+end
+
+spec = Gem::Specification.new do |s|
+  s.platform = Gem::Platform::RUBY
+  s.summary = "Adds URL validation for your ActiveRecord models."
+  s.name = 'validates_url'
+  s.version = '1.0'
+  s.files = FileList['lib/**', 'rails/**', 'Rakefile', 'README']
+  s.description = <<EOF
+Adds URL validation for your ActiveRecord models.  Use validates_url to
+validate that a model attribute is a legal URL.
+EOF
+end
+
+Rake::GemPackageTask.new(spec) do |pkg|
+  pkg.need_zip = true
+  pkg.need_tar = true
+end

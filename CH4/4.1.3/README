@@ -1,0 +1,38 @@
+This directory shows two ways to use validates_url: as a plugin and as a gem.
+
+As Plugin
+=========
+
+Plugins install in the application's vendor/plugins directory.  To get started,
+copy the directory vendor/plugins/validates_url to your Rails application's
+vendor/plugins directory.
+
+You can also make the plugin (the validates_url directory) available via SVN or
+Git, and then install it using the appropriate SVN/Git URL.  For example:
+
+  plugin install git://github.com/SomeGuy/validates_url_plugin.git
+
+As Gem
+======
+
+To use validates_url as a gem, first package and install it:
+
+  $ cd gem
+  $ rake package
+  $ gem install pkg/validates_url-1.0.gem
+
+You can also distribute and install the gem using a gem server, or a public gem
+repository (for example, RubyForge).
+
+Add the gem to your Rails application's configuration (config/environment.rb):
+
+  config.gem 'validates_url'
+
+To install all gems used by your application in your local gem repository:
+
+  $ rake gems:install
+
+To unpack the gem into vendors/gems and distribute it as part of your Rails
+application:
+
+  $ rake gems:unpack

@@ -1,0 +1,21 @@
+This directory shows how to use validates_url as a library file.  To get
+started, copy lib/validates_url.rb into your Rails application's lib/
+directory.
+
+ValidatesUrl
+============
+
+Adds URL validation for your ActiveRecord models.  For example:
+
+  class NewsItem < ActiveRecord::Base
+
+    validates_url
+
+  end
+  
+Without an argument, validates the attribute 'url'.  To validate a different
+attribute, pass its name as argument, for example:
+
+  validate_url :profile_url
+
+

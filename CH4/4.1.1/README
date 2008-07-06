@@ -1,0 +1,17 @@
+This directory shows how to use Ultraviolet in Rails using a helper module.  To
+get started, first install Ultraviolet:
+
+  $ gem install ultraviolet
+
+Then copy app/helpers/uv_helper.rb into your Rails application's app/helpers
+directory.
+
+This example shows how to use the helper's code method from a page template:
+
+<html>
+  <head><title>Syntax highlighting!</title></head>
+  <body>
+    <%= code('@items.each {|item| puts item }') %>
+  </body>
+</html>
+
