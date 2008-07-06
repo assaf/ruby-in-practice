@@ -1,0 +1,48 @@
+Welcome to Ruby in Practice!
+
+This source code distribution is a companion to the book Ruby in Practice
+available from Manning Publications.  To purchase an electronic or printed copy
+of the book, visit http://www.manning.com/mcanally/
+
+
+REQUIREMENT
+
+The examples in this book are written to run on Ruby 1.8.6, and many will also
+run no JRuby 1.1 or later.
+
+If you need help installing Ruby, Appendix A provides installation and setup
+instructions for Windows, OS X and Linux.  Appendix C deals specifically with
+JRuby.
+
+For most examples you will need to install specific Ruby gems before you can
+run the code.  You will find an additional README file in each directory that
+will instruct you which libraries to install, and provide all the other
+relevant information you need to successfully run these examples.
+
+
+ORGANIZATION
+
+To help you find the relevant code for each section, we organized the source
+code by chapter and section.  For example, while reading chapter 2 section 2
+(Test-driven development with Ruby), you can check out the examples from the
+directory CH2/2.2.
+
+The examples are based on listings appearing in the book.  In many cases we
+chose descriptive files names, for example, CH2/2.2/payroll_reporter.rb.  When it
+didn't make sense, we just uses the listing number for the file name.
+
+In several places we provide additional files necessary to make full use of the
+example.  These include additional source files that do not show in the book,
+sample data, etc.
+
+
+CONTACT INFORMATION
+
+Manning provides an Author Online forum accessible from:
+  http://www.manning.com/mcanally/
+
+
+LICENSE
+
+This source code is provided for you to do whatever you like.  Ideally, have
+fun and learn how to make the best of Ruby.
