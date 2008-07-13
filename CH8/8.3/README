@@ -1,0 +1,14 @@
+Sample God configuration file from chapter 8.
+
+If not already installed, start by installing God:
+
+  gem install god
+
+To run God in the foreground and see what it monitors based on this
+configuration file:
+
+  sudo god -c config.god -D
+
+To stop, hit Ctrl-C.
+
+You can use this as basis for creating your own God configurations.

@@ -1,0 +1,17 @@
+Sample Capistrano configuration file from chapter 8.
+
+If not already installed, start by installing Capistrano:
+
+  gem install capistrano
+
+To see all the tasks available from this capfile:
+
+  cap --tasks
+
+To deploy to the staging server (this will run daemon:stop and daemon:start):
+
+  cap staging deploy
+
+To tail log files from the production servers:
+
+  cap production tail

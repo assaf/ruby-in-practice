@@ -1,0 +1,58 @@
+load 'deploy' if respond_to?(:namespace)
+
+set :keep_releases, 5
+set :application,   'ruby_in_practice'
+set :repository,    'http://svn.rubyinpractice.com'
+set :scm_username,  'ruby'
+set :scm_password,  '1npr4ct1c3'
+set :user,          'rubies'
+set :password,      'pract1cin6'
+set :deploy_to,     "/deploy/#{application}"
+set :deploy_via,    :export
+
+ssh_options[:paranoid] = false
+
+task :production do
+  role :app,        'http://prod1.rubyinpractice.com'
+  role :app,        'http://prod2.rubyinpractice.com'
+  role :app,        'http://prod3.rubyinpractice.com'
+  role :app,        'http://prod4.rubyinpractice.com'
+end
+
+task :staging do
+  role :app,        'http://staging.rubyinpractice.com'
+end
+
+before 'deploy', 'daemon:stop'
+after 'deploy',  'daemon:start'
+
+namespace :daemon do
+  desc "Start daemon"
+  task :start do
+    on_rollback do
+      run "cd #{deploy_to} && daemon_ctl stop"
+    end
+    run "cd #{deploy_to} && daemon_ctl start"
+  end
+
+  desc "Stop daemon"
+  task :stop do
+    on_rollback do
+      run "cd #{deploy_to} && daemon_ctl start"
+    end
+    run "cd #{deploy_to} && daemon_ctl stop"
+  end
+end
+
+desc "Tail log file to console"
+task :tail do
+  run "tail -f #{deploy_to}/log/daemon.log" do |channel, stream, data|
+    server = channel[:server]
+    puts if @last_host != server
+   
+    data.each { |line| puts "#{server}: #{line}" }
+    break if stream == :err
+
+    @last_host = server
+  end
+end

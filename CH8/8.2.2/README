@@ -1,0 +1,14 @@
+Sample Vlad files from chapter 8.
+
+If not already installed, start by installing Vlad:
+
+  gem install vlad
+
+To see all the tasks available to Vlad:
+
+  rake --tasks
+
+To run the deployment task:
+
+  rake vald:deploy
+
