@@ -1,0 +1,24 @@
+ruby_in_practice
+================
+
+Demonstrating how to create and deploy Ruby Gems (chapter 8).
+
+The skeleton was created by running:
+
+  newgem ruby_in_practice --simple
+
+To create a new gem, run:
+
+  rake package
+
+To install the gem:
+
+  gem install pkg/ruby_in_practice-0.1.0.gem
+
+You can now require the gem from your Ruby program:
+
+  require 'ruby_in_practice'
+
+Or run it from the command line:
+
+  ruby_in_practice
