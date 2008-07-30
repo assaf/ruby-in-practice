@@ -9,9 +9,9 @@ class AccountsControllerTest < Test::Unit::TestCase
                     'company'=>'ACME', 'email'=>'john@acme.com' }
   end
 
-  def test_wqm_account_created
+  def test_wmq_account_created
     post :create, :account=>@attributes
-    wqm_check_message @q_name do |message|
+    wmq_check_message @q_name do |message|
       from_xml = Hash.from_xml(message.data)
       app = @account.merge('application'=>'test.host')
       assert_equal app, from_xml['account']
@@ -19,7 +19,7 @@ class AccountsControllerTest < Test::Unit::TestCase
   end
 
   def teardown
-    wqm_empty_queues @q_name
+    wmq_empty_queues @q_name
   end
 
 end

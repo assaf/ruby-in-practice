@@ -1,7 +1,7 @@
 module Test::Unit::WMQTest
 
   # Read the WMQ configuration for this environment.
-  def wqm_config
+  def wmq_config
     @wmq_config ||= YAML.load(File.read("#{RAILS_ROOT}config/wmq.yml"))[RAILS_ENV].symbolize_keys
   end
 
@@ -18,7 +18,7 @@ module Test::Unit::WMQTest
   end
 
   # Empty queues at the end of the test.
-  def wqm_empty_queues(*q_names)
+  def wmq_empty_queues(*q_names)
     WMQ::QueueManager.connect(wmq_config) do |qmgr|
       q_names.each do |q_name|
         qmgr.open_queue(:q_name=>q_name, :mode=>:input) do |queue|
