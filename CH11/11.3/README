@@ -1,0 +1,7 @@
+This example illustrates two ways to use ActiveDirectory:
+
+* net-ldap/authenticate.rb -- User authentication against ActiveDirectory.
+  Uses the ruby-net-ldap gem.
+  
+* activedirectory/authenticate.rb --   User authentication against
+  ActiveDirectory.  Uses the activedirectory gem.

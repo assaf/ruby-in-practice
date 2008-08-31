@@ -1,0 +1,13 @@
+<%= content_tag 'div', flash[:error], :class=>'error' if flash[:error] %>
+<% form_tag session_path do %>
+  <p><label for="email">Login</label><br/>
+  <%= text_field_tag 'login' %></p>
+
+  <p><label for="password">Password</label><br/>
+  <%= password_field_tag %></p>
+
+  <p><label for="identity_url">Identity URL:</label><br />
+  <%= text_field_tag 'openid_url' %></p>
+
+  <p class="submit"><%= submit_tag 'Log in' %></p>
+<% end %>

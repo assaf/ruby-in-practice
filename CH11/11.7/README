@@ -1,0 +1,25 @@
+This example illustrates two ways to add OpenID authentication to an existing
+Rails application.
+
+The first method provides OpenID authentication, storing the user's identity
+URL in session[:openid].  It uses app/controllers/login_controller.rb with the
+login form app/views/login/index.html.erb.  Authentication is done using the
+ruby-openid gem.
+
+The second method provides username/password and OpenID authentication,
+storing the user's account id in session[:user_id].
+
+It assumes you're already using the restful_authentication plugin for
+username/password authentication (see section 11.4), and shows the changes you
+would make to add OpenID authentication using the open_id_authentication
+plugin.
+
+The modified controller is app/controllers/sessions_controller.rb, the login
+form is app/views/sessions/index.html.erb.  The authentication process
+requires an additional route specified by config/routes.rb.
+
+OpenID authentication requires the server to store state, as it coordinates
+with the OpenID provider  The migration db/migrate/add_open_id_authenticate
+adds two new tables: open_id_authentication_associations and
+open_id_authentication_nonces.  It also adds the identity_url field to the
+users table.

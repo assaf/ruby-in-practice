@@ -1,0 +1,7 @@
+This example illustrates two ways to use an LDAP directory:
+
+* net-ldap/authenticate.rb -- User authentication against an LDAP directory.
+  Uses the ruby-net-ldap gem.
+  
+* app/models/user.rb -- An ActiveRecord-like model for accessing user's
+  account information from an LDAP directory.  Uses the ActiveLDAP gem.

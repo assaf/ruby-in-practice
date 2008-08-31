@@ -1,0 +1,5 @@
+<%= content_tag 'div', flash[:error], :class=>'error' if flash[:error] %>
+<% form_tag url_for(:action => 'begin') do %>
+  <%= text_field_tag 'openid_url' %>
+  <%= submit_tag 'Login' %>
+<% end %>

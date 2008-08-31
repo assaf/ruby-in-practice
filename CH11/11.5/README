@@ -1,0 +1,15 @@
+This example shows the changes you would make to an existing Rails application
+to add semi-private personalized feeds.  It adds authentication for feeds
+(Atom and RSS) using a private token passed in the request's query parameters.
+
+* app/models/user.rb shows a method and filter you can add to existing user
+  model to generate a secure token for each user account.
+  
+* db/migrate/add_user_token.rb migration adds the token field to the users
+  table and creates a token for all existing user accounts.
+  
+* app/controllers/application.rb adds the login_or_feed_token_required filter
+  which you can use to authenticate feed access (Atom or RSS).
+  
+* app/controllers/comments_controller.rb shows how to use the
+  login_or_feed_token_required filter to access a feed.

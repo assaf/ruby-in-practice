@@ -1,0 +1,3 @@
+This example illustrates a portion of an ActiveRecord model for storing user
+accounts, specifically the parts dealing with storing encrypted passwords.
+
