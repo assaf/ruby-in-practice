@@ -1,0 +1,25 @@
+These two examples show application scripting using OLE (Windows with Outlook)
+and OSA (OS X with iCal).
+
+If you're running Ruby on Windows and using Outlook you can run the code:
+
+  ruby outlook-tasks.rb
+
+The OLE libraries required to use Outlook are part of the standard library for
+Ruby on Windows.
+
+If you're running Ruby on OS X, you must first install the Appscript library:
+
+  sudo gem install rb-appscript
+
+Make sure iCal has a calendar called 'Work', new todos are added there.
+Run the example using:
+
+  ruby ical-todos.rb
+
+If you're using Growl, you can add the content of growl.rb to the end of
+ical-todos.rb and run that script again.  You will see a Growl notification
+once all todos are added to your iCal calendar.
+
+The sample.rb file contains one TODO and one FIXME comments.  After running
+the script, these should show as oeither Outlook tasks or iCal todos.
