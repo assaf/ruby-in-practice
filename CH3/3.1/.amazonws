@@ -1,0 +1,4 @@
+# Amazon Web Services credentials. Edit with your access key ID and secret
+# and place in your home directory.
+key_id: <your AWS access key id>
+key_secret: <your AWS secret access key>

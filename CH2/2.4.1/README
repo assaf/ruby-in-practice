@@ -1,7 +1,9 @@
-To run the process checker test (Linux, OS X, BSD, etc):
+This example illustrates two ways to test the ps command (available on OS X, Linux, Cygwin and other UNIX environments).
+
+To run the process checker test with the ps command (may return different result on each run):
 
   ruby ps_checker_test.rb 
 
-To run the process checker test with fixture (all platforms):
+To run the process checker test with fixture (dry run):
 
   ruby ps_checker_with_fixture.rb

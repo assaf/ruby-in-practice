@@ -1,0 +1,32 @@
+This example uses two scripts to share images using Amazon S3 and Twitter.
+
+To run these scripts you first need to install the ImageMagick command-line
+tools:
+
+  http://www.imagemagick.org/
+
+Next install the aws-s3 and twitter gems:
+
+  gem install aws-s3
+  gem install twitter
+
+In your home directory create two files, a .amazonws file with your AWS
+account credentials and a .twitter file with your Twitter account credentials.
+We provide a template for both files here.
+
+To upload images from the current working directory to Amazon S3:
+
+  ruby upload_images.rb <bucket name>
+
+This creates a file called 'images' which contains the URLs of all uploaded
+images.  The next script uses that file to share one image at a time with your
+Twitter followers:
+
+  twitter_image.rb "<your message>"
+
+You can run this command repeatedly, once for each image until all images are
+posted to Twitter and the images file is empty.  You can also schedule it to
+run periodically using cron:
+
+  echo "0 * * * * $(pwd)/twitter_image.rb \"Check out this photo \"" > jobs
+  crontab jobs

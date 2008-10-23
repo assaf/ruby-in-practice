@@ -1,0 +1,4 @@
+# Twitter credentials. Edit with your email address and password
+# and place in your home directory.
+email: <email>
+password: <password>
