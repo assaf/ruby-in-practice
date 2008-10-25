@@ -11,7 +11,7 @@ Dir.glob('**/*.rb').each do |file_name|
       task.Subject = "%s: %s" % match.captures
       details = []
       details << "%s, line %d:\n" % [File.join(Dir.pwd, file_name), line_no + 1]
-      selection = [line_no - 5, 0].max ... [line_no + 5, lines.size].min
+      selection = [line_no - 5, 0].max .. [line_no + 5, lines.size].min
       details.push selection.map { |i| "%5d: %s" % [i + 1, lines[i]] }
       task.Body = details.join
       task.Save
