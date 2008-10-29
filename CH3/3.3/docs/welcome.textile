@@ -1,0 +1,15 @@
+h1.  Welcome
+
+Myapp is *the best* something something.
+
+New features in Myapp 2.0:
+* Super fast
+* Never breaks
+* Saves kittens
+
+Hear what other people have to say:
+
+bq. Myapp has totally changed my life. Can't imagine how I lived without it!
+-- Anonymous
+
+Developed for: "Ruby in Practice":http://www.manning.com/mcanally/

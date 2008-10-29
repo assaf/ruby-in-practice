@@ -1,0 +1,25 @@
+== Your project here
+
+We took care of the tasks, you just need to add the code!
+
+== Usage
+
+To generate RDoc documentation for your project:
+
+  rake rdoc
+  
+To run all the specs:
+
+  rake spec
+  
+Or just:
+
+  rake
+  
+To run only failed examples from the previous run:
+
+  rake failed
+
+To see all other tasks:
+
+  rake --tasks

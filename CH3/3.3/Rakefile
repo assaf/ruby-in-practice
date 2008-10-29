@@ -1,0 +1,58 @@
+require 'rake/rdoctask'
+require 'spec/rake/spectask'
+require 'redcloth'
+
+Rake::RDocTask.new('rdoc') do |rdoc|
+  rdoc.title = 'myapp'
+  rdoc.main  = 'README'
+  rdoc.options << '--line-numbers'
+  rdoc.rdoc_files.include 'lib/**/*.rb', 'README', 'LICENSE'
+end
+
+desc 'Run all specs'
+Spec::Rake::SpecTask.new('spec') do |task|
+  task.spec_files = FileList['spec/**/*_spec.rb']
+  task.spec_opts << '--loadby' << 'mtime' <<
+    '--backtrace' <<
+    '--format' << 'progress' <<
+    '--format' << 'failing_examples:failed'
+end
+
+desc 'Run all failed examples'
+Spec::Rake::SpecTask.new('failed') do |task|
+  task.spec_files = FileList['spec/**/*_spec.rb']
+  task.spec_opts << '--loadby' << 'mtime' <<
+    '--backtrace' <<
+    '--format' << 'progress' <<
+    '--format' << 'failing_examples:failed' <<
+    '--example' << 'failed'
+end
+
+desc 'Prepare application for distribution'
+task 'prepare'=>['spec', 'rdoc', 'js/all.js', 'html']
+
+file 'js/all.js'=>FileList['js/*.js'].exclude('js/all.js') do |task|
+  combined = task.prerequisites.map { |prereq| File.read(prereq.to_s) }.join("\n")
+  File.open task.name, 'w' do |file|
+    file.write combined
+  end
+end
+
+rule '.html'=>'docs/%n.textile' do |task|
+  mkdir_p File.dirname(task.name)
+  textile = File.read(task.source)
+  File.open task.name, 'w' do |file|
+    file.write RedCloth.new(textile).to_html
+  end
+end
+
+file 'html'=>FileList['docs/*.textile'].pathmap('html/%n.html')
+
+task 'default'=>'spec'
+
+desc 'Clean temporary directories and files'
+task 'clobber' do
+  rm_rf 'tmp'
+  rm_f 'failed'
+  rm_f 'js/all.js'
+end
